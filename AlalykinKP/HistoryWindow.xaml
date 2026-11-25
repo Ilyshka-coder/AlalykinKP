@@ -1,0 +1,34 @@
+﻿<Window x:Class="AlalykinKP.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="История званий" Height="400" Width="600" 
+        WindowStartupLocation="CenterScreen" FontFamily="Courier New" Icon="/Images/icon.png">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="TitleText" FontSize="18" FontWeight="Bold" Margin="0,0,0,15" TextWrapping="Wrap"/>
+
+        <ListView Name="HistoryList" Grid.Row="1" Background="White">
+            <ListView.View>
+                <GridView>
+                    <!-- Так как мы пишем в историю СТАРОЕ звание, колонка так и называется -->
+                    <GridViewColumn Header="Предыдущее звание" Width="250" DisplayMemberBinding="{Binding Звание.zvanie}"/>
+                    <GridViewColumn Header="Дата смены" Width="200" DisplayMemberBinding="{Binding date_change, StringFormat=dd.MM.yyyy HH:mm}"/>
+                    <GridViewColumn Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Удалить" Width="70" Height="30" Click="Button_Click" Tag="{Binding}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Закрыть" Grid.Row="2" HorizontalAlignment="Right" Width="100" Height="30" Margin="0,15,0,0" Click="CloseButton_Click" FontSize="14"/>
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Page x:Class="AlalykinKP.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="AddEditPage" FontFamily="Courier New" Background="#89e892">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ФИО" FontSize="20" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Дата рождения" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Должность" FontSize="20" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Звание" FontSize="20" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Награды" FontSize="20" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Участие" FontSize="20" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Рота" FontSize="20" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Дата поступления" FontSize="20" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" Margin="10"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Margin="0,5">
+            <TextBox Name="SurnameTB" Width="180" Height="35" FontSize="18" Margin="0,0,10,0" Padding="5"/>
+            <TextBox Name="NameTB" Width="180" Height="35" FontSize="18" Margin="0,0,10,0" Padding="5"/>
+            <TextBox Name="PatronymicTB" Width="180" Height="35" FontSize="18" Padding="5"/>
+        </StackPanel>
+
+        <DatePicker Name="BirhDateDP" Grid.Row="1" Grid.Column="1" Height="35" Width="200" FontSize="18" HorizontalAlignment="Left" Margin="0,5"/>
+        <TextBox Name="DolzhnostTB" Grid.Column="1" Grid.Row="2" Height="35" Width="400" HorizontalAlignment="Left" FontSize="18" Margin="0,5" Padding="5"/>
+        <ComboBox Name="ZvanieCombo" Grid.Column="1" Grid.Row="3" Height="35" Width="400" HorizontalAlignment="Left" FontSize="18" Margin="0,5" IsEditable="False"/>
+        <TextBox Name="NagradyTB" Grid.Column="1" Grid.Row="4" Height="35" Width="400" HorizontalAlignment="Left" FontSize="18" Margin="0,5" Padding="5"/>
+        <TextBox Name="UchastieTB" Grid.Column="1" Grid.Row="5" Height="35" Width="400" HorizontalAlignment="Left" FontSize="18" Margin="0,5" Padding="5"/>
+
+        <ComboBox Name="RotaCombo" Grid.Column="1" Grid.Row="6" Height="35" Width="400" HorizontalAlignment="Left" FontSize="18" Margin="0,5"/>
+        <DatePicker Name="PostuplenieDP" Grid.Row="7" Grid.Column="1" Height="35" Width="200" FontSize="18" HorizontalAlignment="Left" Margin="0,5"/>
+
+        <Button Name="SaveButton" Content="Сохранить" Grid.Row="8" Grid.Column="1" Click="SaveButton_Click" FontSize="20" Width="200" Height="40" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+
+        <Button HorizontalAlignment="Left" Name="ChangePhotoBtn" Content="Выберите изображение" Height="40" Width="400" FontSize="18" VerticalAlignment="Top" Grid.Column="2" Click="ChangePhoto_Click" Margin="10"/>
+        <Image Width="400" Grid.Column="2" Grid.RowSpan="7" Grid.Row="1" Height="400" HorizontalAlignment="Left" VerticalAlignment="Top" Name="BigImage" Margin="10" Stretch="Uniform"/>
+    </Grid>
+</Page>
